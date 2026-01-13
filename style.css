@@ -701,6 +701,28 @@ html {
     }
 }
 
+@media (max-width: 768px) {
+    .wow-separator {
+        padding: 1.5rem 0;
+    }
+
+    .rolling-text-item {
+        font-size: 2.5rem;
+        /* Smaller font on mobile */
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .rolling-text-track {
+        gap: 2rem;
+    }
+
+    .wow-separator::before,
+    .wow-separator::after {
+        width: 30px;
+        /* Smaller gradient fade */
+    }
+}
+
 /* Footer */
 .footer {
     padding: 1.5rem 0;
