@@ -181,28 +181,29 @@ html {
     color: var(--accent);
 }
 
-/* Hero Section */
+/* Hero Section Redesign */
 .hero {
     padding: 11rem 0 7rem;
     background: radial-gradient(circle at top right, #f0fdf9 0%, #ffffff 100%);
-    /* Subtle green tint */
-    text-align: center;
     border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    /* Prevent spill */
 }
 
-.badge {
-    display: inline-block;
-    padding: 0.5rem 1.25rem;
-    background: var(--badge-bg);
-    color: var(--badge-text);
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    border: 1px solid rgba(0, 143, 107, 0.2);
-    /* Added subtle border */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    text-align: left;
+    /* Reset center alignment */
+}
+
+/* Left Col: Text */
+.hero-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .hero h1 {
@@ -212,22 +213,114 @@ html {
     margin-bottom: 1.5rem;
     color: var(--text-primary);
     letter-spacing: -0.04em;
+    text-align: left;
 }
 
 .hero-text {
-    font-size: 1.35rem;
-    /* Larger readable text */
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 650px;
-    margin: 0 auto 3rem;
-    font-weight: 500;
-    /* Slightly bolder */
+    max-width: 100%;
+    margin: 0 0 2.5rem 0;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.8;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    justify-content: flex-start;
+    /* Left align buttons */
+}
+
+/* Right Col: Visual */
+.hero-visual {
+    position: relative;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.hero-photo {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 2rem;
+    /* Modern rounded corners */
+    box-shadow: 20px 20px 0px var(--accent-hover);
+    /* Cool solid shadow effect */
+    border: 3px solid var(--border);
+    background: white;
+}
+
+/* Floating Badge */
+.shoptet-badge-floating {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    /* Overlap the photo corner */
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-strong);
+    border: 1px solid var(--border);
+    transition: transform 0.3s;
+    z-index: 10;
+}
+
+.shoptet-badge-floating:hover {
+    transform: scale(1.05);
+}
+
+.shoptet-badge-floating img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Responsive Hero */
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text-col {
+        align-items: center;
+        order: 1;
+        /* Actually, text first is better for immediate context */
+    }
+
+    .hero-visual {
+        order: 2;
+        margin-top: 2rem;
+    }
+
+    .hero h1,
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-photo {
+        max-width: 350px;
+        box-shadow: 10px 10px 0px var(--accent-hover);
+        /* Smaller shadow on mobile */
+    }
+
+    .shoptet-badge-floating {
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center badge on mobile */
+        width: max-content;
+    }
+
+    .shoptet-badge-floating:hover {
+        transform: translateX(-50%) scale(1.05);
+    }
 }
 
 /* References / Marquee */
@@ -547,5 +640,166 @@ html {
 
     .marquee-content {
         gap: 2rem;
+    }
+}
+
+/* Utilities */
+.text-accent {
+    color: var(--accent);
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* Service Icons Update */
+/* Service Icons Update */
+.service-card .icon {
+    /* Smaller icon container for the header row */
+    font-size: 2rem;
+    margin-bottom: 0;
+    /* Remove bottom margin */
+    background: var(--bg-secondary);
+    width: 60px;
+    /* Smaller circle */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    color: black;
+    /* Default black */
+    transition: all 0.3s;
+    flex-shrink: 0;
+    /* Don't shrink */
+}
+
+.service-card .icon svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5;
+}
+
+/* Service Card Modern Grid Layout */
+.service-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    /* Icon | Title */
+    grid-template-rows: auto auto;
+    /* Header | Text */
+    gap: 1rem 1.5rem;
+    align-items: center;
+
+    background: white;
+    border: 1px solid var(--border);
+    /* Clean thin border */
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+}
+
+.service-card h3 {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+    /* Slightly removed margin as grid handles gap */
+    font-weight: 800;
+    grid-column: 2;
+    grid-row: 1;
+    line-height: 1.2;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    grid-column: 1 / -1;
+    /* Span full width */
+    grid-row: 2;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--accent);
+}
+
+.service-card:hover .icon {
+    color: white;
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* Responsive Update */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        /* Drawer style */
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 5rem 2rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav-list {
+        display: flex;
+        /* Ensure flex is on */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    /* Animate menu icon to X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
     }
 }

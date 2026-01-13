@@ -21,6 +21,11 @@
             <a href="#" class="logo">
                 <img src="logo.png" alt="Martin Akulšin Logo">
             </a>
+            <button class="menu-toggle" aria-label="Otevřít menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#sluzby">Služby</a></li>
@@ -34,20 +39,28 @@
     <main>
         <section class="hero">
             <div class="container hero-content">
-                <span class="badge">Shoptet Bronzový Partner</span>
-                <h1>Pomáhám podnikatelům růst online</h1>
-                <p class="hero-text">Jmenuji se Martin Akulšin. Zaměřuji se na čistý design a funkčnost. Nastartujte a
-                    vylepšete svůj online business se mnou.</p>
-                <div class="hero-buttons">
-                    <a href="#sluzby" class="btn btn-primary">Moje služby</a>
-                    <a href="#kontakt" class="btn btn-outline">Napište mi</a>
+                <div class="hero-text-col">
+                    <h1>Udělejte ve svém byznysu jasno. Online.</h1>
+                    <p class="hero-text">Jsem vaším partnerem v digitálním světě. Od strategie přes design až po
+                        spuštění.</p>
+                    <div class="hero-buttons">
+                        <a href="#sluzby" class="btn btn-primary">Moje služby</a>
+                        <a href="#kontakt" class="btn btn-outline">Napište mi</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="martin.jpg" alt="Martin Akulšin" class="hero-photo">
+                    <a href="https://partneri.shoptet.cz/profesionalove/martin-akulsin/" target="_blank"
+                        rel="noopener noreferrer" class="shoptet-badge-floating">
+                        <img src="shoptet-badge.png" alt="Shoptet Bronzový Partner">
+                    </a>
                 </div>
             </div>
         </section>
 
         <section class="section references">
             <div class="container">
-                <h2 class="section-title">Reference</h2>
+                <h2 class="section-title text-accent">Reference</h2>
                 <p class="section-subtitle">S firmami buduji dlouhodobou spolupráci.</p>
                 <div class="marquee-wrapper">
                     <div class="marquee-content">
@@ -70,11 +83,19 @@
 
         <section id="sluzby" class="section services">
             <div class="container">
-                <h2 class="section-title">Co nabízím</h2>
+                <h2 class="section-title text-accent">S čím pomůžu?</h2>
                 <div class="services-grid">
                     <!-- Tvorba Shoptet e-shopů -->
                     <div class="service-card">
-                        <div class="icon">🛒</div>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
                         <h3>Tvorba Shoptet e-shopů</h3>
                         <p>Kompletní nastavení a spuštění e-shopu na platformě Shoptet. Pomohu vám s úpravou vzhledu,
                             napojením doplňků, nastavením procesů i celkovou optimalizací vašeho online obchodu.</p>
@@ -82,7 +103,16 @@
 
                     <!-- Grafika a tisk -->
                     <div class="service-card">
-                        <div class="icon">🎨</div>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.586 7.586"></path>
+                                <circle cx="11" cy="11" r="2"></circle>
+                            </svg>
+                        </div>
                         <h3>Grafika a tisk</h3>
                         <p>Navrhuji loga, bannery, vizitky, trička, reklamní předměty, firemní grafiku i plakáty. Díky
                             spolupráci s ověřenou tiskárnou zajistím také kvalitní potisk oblečení a dárkových
@@ -91,7 +121,16 @@
 
                     <!-- Produktová fotografie -->
                     <div class="service-card">
-                        <div class="icon">📸</div>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                                </path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </div>
                         <h3>Produktová fotografie</h3>
                         <p>Zajistím nafocení produktů pro váš e-shop. Dle velikosti a sortimentu připravím i 360°
                             fotografie pro dokonalou prezentaci zboží zákazníkům.</p>
@@ -99,7 +138,14 @@
 
                     <!-- Kodérské úpravy -->
                     <div class="service-card">
-                        <div class="icon">💻</div>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
                         <h3>Kodérské úpravy</h3>
                         <p>Úpravy vzhledu šablony na míru. CSS stylování, úprava hlavičky, patičky a detailu produktu
                             pro odlišení od konkurence.</p>
@@ -107,7 +153,14 @@
 
                     <!-- Konzultace a Růst -->
                     <div class="service-card">
-                        <div class="icon">📈</div>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                        </div>
                         <h3>Konzultace a Růst</h3>
                         <p>Poradím vám, jak e-shop dále rozvíjet, nastavit marketingové nástroje a zvýšit prodeje.</p>
                     </div>
