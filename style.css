@@ -678,17 +678,23 @@ html {
     /* Huge text */
     font-weight: 900;
     text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+    color: rgba(0, 204, 152, 0.05);
+    /* Subtle green fill always */
+    -webkit-text-stroke: 2px var(--accent);
+    /* Green stroke always */
+    text-shadow: 0 0 20px rgba(0, 204, 152, 0.2);
+    /* Glow always */
     white-space: nowrap;
     transition: all 0.3s;
     line-height: 1;
 }
 
 .wow-separator:hover .rolling-text-item {
-    -webkit-text-stroke: 2px var(--accent);
-    color: rgba(0, 204, 152, 0.1);
-    text-shadow: 0 0 30px rgba(0, 204, 152, 0.3);
+    opacity: 1;
+    color: rgba(0, 204, 152, 0.15);
+    /* More fill on hover */
+    text-shadow: 0 0 40px rgba(0, 204, 152, 0.4);
+    /* Stronger glow */
 }
 
 @keyframes rollLeft {
@@ -709,7 +715,8 @@ html {
     .rolling-text-item {
         font-size: 2.5rem;
         /* Smaller font on mobile */
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+        -webkit-text-stroke: 1px var(--accent);
+        /* Green stroke on mobile too */
     }
 
     .rolling-text-track {
@@ -760,6 +767,16 @@ html {
 /* Utilities */
 .text-accent {
     color: var(--accent);
+}
+
+.mobile-break {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-break {
+        display: inline;
+    }
 }
 
 /* Menu Toggle (Mobile) */
