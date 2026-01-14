@@ -56,7 +56,7 @@
             <!-- Mobile Menu Overlay -->
             <div id="mobile-menu"
                 class="fixed inset-0 bg-[#0f172a] z-[1050] flex flex-col pt-32 px-8 gap-8 transition-transform duration-300 translate-x-full md:hidden"
-                style="background-color: #0f172a !important;">
+                style="background-color: #0f172a !important; opacity: 1 !important; background-image: none !important;">
                 <ul class="flex flex-col gap-6 list-none items-center text-center">
                     <li><a href="#sluzby"
                             class="mobile-link text-3xl font-bold text-white hover:text-[var(--color-accent)] transition-colors">Služby</a>
@@ -272,34 +272,35 @@
                             Rychlé, moderní a efektivní prezentace pro vaše podnikání. Ideální pro freelancery, malé
                             firmy nebo propagaci konkrétního produktu.</p>
                     </div>
-                </div>
 
-                <!-- Konzultace a Růst -->
-                <div
-                    class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                    <!-- Konzultace a Růst -->
                     <div
-                        class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                            <polyline points="17 6 23 6 23 12"></polyline>
-                        </svg>
+                        class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                        <div
+                            class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">Konzultace
+                            a Růst</h3>
+                        <p
+                            class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
+                            Poradím vám, jak e-shop dále rozvíjet, nastavit marketingové nástroje a zvýšit prodeje.</p>
                     </div>
-                    <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">Konzultace
-                        a Růst</h3>
-                    <p
-                        class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
-                        Poradím vám, jak e-shop dále rozvíjet, nastavit marketingové nástroje a zvýšit prodeje.</p>
-                </div>
-            </div>
 
-            <div id="omne"
-                class="mt-20 bg-[var(--color-bg-secondary)] rounded-[var(--radius)] p-12 text-center border-2 border-[var(--color-border-strong)] shadow-[var(--shadow)]">
-                <h3 class="mb-4 font-extrabold text-2xl">Hledáte spolehlivého partnera?</h3>
-                <p class="text-[var(--color-text-secondary)]">Jsem oficiální Bronzový partner Shoptetu. Zaručuji
-                    kvalitu, dodržování termínů a buduji
-                    dlouhodobé spolupráce.</p>
-            </div>
+                </div>
+
+                <div id="omne"
+                    class="mt-20 bg-[var(--color-bg-secondary)] rounded-[var(--radius)] p-12 text-center border-2 border-[var(--color-border-strong)] shadow-[var(--shadow)]">
+                    <h3 class="mb-4 font-extrabold text-2xl">Hledáte spolehlivého partnera?</h3>
+                    <p class="text-[var(--color-text-secondary)]">Jsem oficiální Bronzový partner Shoptetu. Zaručuji
+                        kvalitu, dodržování termínů a buduji
+                        dlouhodobé spolupráce.</p>
+                </div>
             </div>
         </section>
 
