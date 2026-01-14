@@ -1,0 +1,26 @@
+{
+  "name": "freelancer",
+  "version": "1.0.0",
+  "description": "Profesionální landing page pro freelancera a Shoptet partnera.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saviipro/freelancer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/saviipro/freelancer/issues"
+  },
+  "homepage": "https://github.com/saviipro/freelancer#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}

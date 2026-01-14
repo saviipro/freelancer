@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs"
+    class="scroll-smooth text-[18px] text-[var(--color-text-primary)] bg-[var(--color-bg-primary)] leading-relaxed font-[family-name:var(--font-main)]">
 
 <head>
     <meta charset="UTF-8">
@@ -16,96 +17,141 @@
 
 <body>
 
-    <header class="header">
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Martin Akulšin Logo">
+    <header
+        class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b-2 border-[var(--color-border)] z-[1000] py-5">
+        <div class="w-full max-w-[1200px] mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="logo.png" alt="Martin Akulšin Logo" class="h-[50px] w-auto object-contain">
             </a>
-            <button class="menu-toggle" aria-label="Otevřít menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button
+                class="menu-toggle cursor-pointer bg-transparent border-none w-[30px] h-[21px] flex flex-col justify-between md:hidden z-[1100]"
+                aria-label="Otevřít menu">
+                <span
+                    class="w-full h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
+                <span
+                    class="w-full h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
+                <span
+                    class="w-full h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
             </button>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#sluzby">Služby</a></li>
-                    <li><a href="#domeny">Domény</a></li>
-                    <li><a href="#kontakt" class="btn btn-primary">Kontaktovat</a></li>
+            <nav class="nav md:block hidden">
+                <ul class="flex gap-10 list-none items-center">
+                    <li><a href="#sluzby"
+                            class="no-underline text-[var(--color-text-secondary)] font-bold text-[1.05rem] transition-colors hover:text-[var(--color-accent)]">Služby</a>
+                    </li>
+                    <li><a href="#domeny"
+                            class="no-underline text-[var(--color-text-secondary)] font-bold text-[1.05rem] transition-colors hover:text-[var(--color-accent)]">Domény</a>
+                    </li>
+                    <li><a href="#kontakt"
+                            class="inline-block py-3.5 px-8 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-lg bg-[var(--color-accent)] border-3 border-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(0,204,152,0.4)]">Kontaktovat</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="hero-text-col">
-                    <h1>Udělejte ve svém byznysu jasno. Online.</h1>
-                    <p class="hero-text">Jsem vaším partnerem v digitálním světě. Od strategie přes design až po
+        <section
+            class="pt-44 pb-28 bg-[radial-gradient(circle_at_top_right,#f0fdf9_0%,#ffffff_100%)] border-b border-[var(--color-border)] overflow-hidden">
+            <div
+                class="w-full max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start order-1 md:order-none">
+                    <h1
+                        class="text-6xl font-extrabold leading-[1.1] mb-6 text-[var(--color-text-primary)] tracking-tight text-left md:text-left">
+                        Udělejte ve svém byznysu jasno. Online.</h1>
+                    <p
+                        class="text-xl text-[var(--color-text-secondary)] max-w-full mb-10 font-normal text-left md:text-left leading-[1.8]">
+                        Jsem vaším partnerem v digitálním světě. Od strategie přes design až po
                         spuštění.</p>
-                    <div class="hero-buttons">
-                        <a href="#sluzby" class="btn btn-primary">Moje služby</a>
-                        <a href="#kontakt" class="btn btn-outline">Napište mi</a>
+                    <div class="flex gap-4 justify-center md:justify-start">
+                        <a href="#sluzby"
+                            class="inline-block py-3.5 px-8 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-lg bg-[var(--color-accent)] border-3 border-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(0,204,152,0.4)]">Moje
+                            služby</a>
+                        <a href="#kontakt"
+                            class="inline-block py-3.5 px-8 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-lg bg-transparent text-[var(--color-text-primary)] border-3 border-[var(--color-border-strong)] hover:border-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)]">Napište
+                            mi</a>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <img src="martin.jpg" alt="Martin Akulšin" class="hero-photo">
+                <div class="relative flex justify-center items-center order-2 md:order-none mt-8 md:mt-0">
+                    <img src="martin.jpg" alt="Martin Akulšin"
+                        class="w-full max-w-[350px] md:max-w-[450px] rounded-[2rem] shadow-[10px_10px_0px_var(--color-accent-hover)] md:shadow-[20px_20px_0px_var(--color-accent-hover)] border-3 border-[var(--color-border)] bg-white">
                     <a href="https://partneri.shoptet.cz/profesionalove/martin-akulsin/" target="_blank"
-                        rel="noopener noreferrer" class="shoptet-badge-floating">
-                        <img src="shoptet-badge.png" alt="Shoptet Bronzový Partner">
+                        rel="noopener noreferrer"
+                        class="absolute -bottom-5 left-1/2 -translate-x-1/2 md:left-[-20px] md:translate-x-0 bg-white p-4 rounded-[var(--radius)] shadow-xl border border-[var(--color-border)] transition-transform duration-300 z-10 hover:scale-105 w-max">
+                        <img src="shoptet-badge.png" alt="Shoptet Bronzový Partner" class="h-[50px] w-auto block">
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="section references">
-            <div class="container">
-                <h2 class="section-title text-accent">Reference</h2>
-                <p class="section-subtitle">S firmami buduji dlouhodobou spolupráci.</p>
-                <div class="marquee-wrapper">
-                    <div class="marquee-content">
+        <section class="bg-white py-16 border-b border-[var(--color-border)] overflow-hidden">
+            <div class="w-full max-w-[1200px] mx-auto px-6">
+                <h2 class="text-5xl font-extrabold mb-8 text-center tracking-tighter text-[var(--color-accent)]">
+                    Reference</h2>
+                <p class="text-center text-[var(--color-text-secondary)] -mt-6 mb-16 text-xl max-w-[700px] mx-auto">S
+                    firmami buduji dlouhodobou spolupráci.</p>
+                <div
+                    class="w-full overflow-hidden relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:w-[100px] after:z-[2] after:pointer-events-none after:left-0 after:bg-gradient-to-r after:from-white after:to-transparent before:content-[''] before:absolute before:top-0 before:bottom-0 before:w-[100px] before:z-[2] before:pointer-events-none before:right-0 before:bg-gradient-to-l before:from-white before:to-transparent">
+                    <div class="flex gap-16 w-max items-center animate-scroll hover:[animation-play-state:paused]">
                         <!-- Duplicate images for seamless loop -->
-                        <img src="logos/logo1.png" alt="Klient 1">
-                        <img src="logos/logo2.png" alt="Klient 2">
-                        <img src="logos/logo3.png" alt="Klient 3">
-                        <img src="logos/logo4.png" alt="Klient 4">
-                        <img src="logos/logo5.png" alt="Klient 5">
+                        <img src="logos/logo1.png" alt="Klient 1"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo2.png" alt="Klient 2"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo3.png" alt="Klient 3"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo4.png" alt="Klient 4"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo5.png" alt="Klient 5"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
                         <!-- Duplicates -->
-                        <img src="logos/logo1.png" alt="Klient 1">
-                        <img src="logos/logo2.png" alt="Klient 2">
-                        <img src="logos/logo3.png" alt="Klient 3">
-                        <img src="logos/logo4.png" alt="Klient 4">
-                        <img src="logos/logo5.png" alt="Klient 5">
+                        <img src="logos/logo1.png" alt="Klient 1"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo2.png" alt="Klient 2"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo3.png" alt="Klient 3"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo4.png" alt="Klient 4"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
+                        <img src="logos/logo5.png" alt="Klient 5"
+                            class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sluzby" class="section services">
-            <div class="container">
-                <h2 class="section-title text-accent">S čím pomůžu?</h2>
-                <div class="services-grid">
+        <section id="sluzby" class="py-24 border-b-3 border-[var(--color-bg-secondary)] bg-white">
+            <div class="w-full max-w-[1200px] mx-auto px-6">
+                <h2 class="text-5xl font-extrabold mb-8 text-center tracking-tighter text-[var(--color-accent)]">S čím
+                    pomůžu?</h2>
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-12">
                     <!-- Tvorba Shoptet e-shopů -->
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    <div
+                        class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                        <div
+                            class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <circle cx="9" cy="21" r="1"></circle>
                                 <circle cx="20" cy="21" r="1"></circle>
                                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                             </svg>
                         </div>
-                        <h3>Tvorba Shoptet <br class="mobile-break">e-shopů</h3>
-                        <p>Kompletní nastavení a spuštění e-shopu na platformě Shoptet. Pomohu vám s úpravou vzhledu,
+                        <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">Tvorba
+                            Shoptet <br class="hidden max-md:inline">e-shopů</h3>
+                        <p
+                            class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
+                            Kompletní nastavení a spuštění e-shopu na platformě Shoptet. Pomohu vám s úpravou vzhledu,
                             napojením doplňků, nastavením procesů i celkovou optimalizací vašeho online obchodu.</p>
                     </div>
 
                     <!-- Grafika a tisk -->
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    <div
+                        class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                        <div
+                            class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
                                 <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
@@ -113,17 +159,22 @@
                                 <circle cx="11" cy="11" r="2"></circle>
                             </svg>
                         </div>
-                        <h3>Grafika a tisk</h3>
-                        <p>Navrhuji loga, bannery, vizitky, trička, reklamní předměty, firemní grafiku i plakáty. Díky
+                        <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">Grafika a
+                            tisk</h3>
+                        <p
+                            class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
+                            Navrhuji loga, bannery, vizitky, trička, reklamní předměty, firemní grafiku i plakáty. Díky
                             spolupráci s ověřenou tiskárnou zajistím také kvalitní potisk oblečení a dárkových
                             materiálů.</p>
                     </div>
 
                     <!-- Produktová fotografie -->
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    <div
+                        class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                        <div
+                            class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path
                                     d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
@@ -131,100 +182,158 @@
                                 <circle cx="12" cy="13" r="4"></circle>
                             </svg>
                         </div>
-                        <h3>Produktová fotografie</h3>
-                        <p>Zajistím nafocení produktů pro váš e-shop. Dle velikosti a sortimentu připravím i 360°
+                        <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">Produktová
+                            fotografie</h3>
+                        <p
+                            class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
+                            Zajistím nafocení produktů pro váš e-shop. Dle velikosti a sortimentu připravím i 360°
                             fotografie pro dokonalou prezentaci zboží zákazníkům.</p>
                     </div>
 
                     <!-- Kodérské úpravy -->
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    <div
+                        class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                        <div
+                            class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <polyline points="16 18 22 12 16 6"></polyline>
                                 <polyline points="8 6 2 12 8 18"></polyline>
                             </svg>
                         </div>
-                        <h3>Kodérské úpravy</h3>
-                        <p>Úpravy vzhledu šablony na míru. CSS stylování, úprava hlavičky, patičky a detailu produktu
+                        <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">Kodérské
+                            úpravy</h3>
+                        <p
+                            class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
+                            Úpravy vzhledu šablony na míru. CSS stylování, úprava hlavičky, patičky a detailu produktu
                             pro odlišení od konkurence.</p>
                     </div>
 
                     <!-- Konzultace a Růst -->
-                    <div class="service-card">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    <div
+                        class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                        <div
+                            class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                                 <polyline points="17 6 23 6 23 12"></polyline>
                             </svg>
                         </div>
-                        <h3>Konzultace a Růst</h3>
-                        <p>Poradím vám, jak e-shop dále rozvíjet, nastavit marketingové nástroje a zvýšit prodeje.</p>
+                        <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">Konzultace
+                            a Růst</h3>
+                        <p
+                            class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
+                            Poradím vám, jak e-shop dále rozvíjet, nastavit marketingové nástroje a zvýšit prodeje.</p>
                     </div>
                 </div>
 
-                <div class="trust-box">
-                    <h3>Hledáte spolehlivého partnera?</h3>
-                    <p>Jsem oficiální Bronzový partner Shoptetu. Zaručuji kvalitu, dodržování termínů a buduji
+                <div
+                    class="mt-20 bg-[var(--color-bg-secondary)] rounded-[var(--radius)] p-12 text-center border-2 border-[var(--color-border-strong)] shadow-[var(--shadow)]">
+                    <h3 class="mb-4 font-extrabold text-2xl">Hledáte spolehlivého partnera?</h3>
+                    <p class="text-[var(--color-text-secondary)]">Jsem oficiální Bronzový partner Shoptetu. Zaručuji
+                        kvalitu, dodržování termínů a buduji
                         dlouhodobé spolupráce.</p>
                 </div>
             </div>
         </section>
 
-        <section id="domeny" class="section domains">
-            <div class="container">
-                <h2 class="section-title">Domény na prodej</h2>
-                <p class="section-subtitle">Atraktivní domény pro moderní technologie a AI startupy.</p>
-                <div class="domains-grid">
-                    <div class="domain-card">
-                        <span class="domain-name">www.ailogic.cz</span>
-                        <span class="domain-status available">Na prodej</span>
-                        <a href="#kontakt" class="btn btn-sm">Mám zájem</a>
+        <section id="domeny"
+            class="bg-[var(--color-bg-dark)] text-white relative overflow-hidden py-32 border-none after:content-[''] after:absolute after:top-[-50%] after:left-1/2 after:-translate-x-1/2 after:w-[600px] after:h-[600px] after:bg-[var(--color-accent)] after:opacity-10 after:blur-[80px] after:rounded-full after:pointer-events-none">
+            <div class="w-full max-w-[800px] mx-auto px-6 relative z-[1]">
+                <h2 class="text-5xl font-extrabold mb-8 text-center tracking-tighter text-white">Domény na prodej</h2>
+                <p class="text-center text-[#cbd5e1] -mt-6 mb-16 text-xl max-w-[700px] mx-auto">Atraktivní domény pro
+                    moderní technologie a AI startupy.</p>
+
+                <div class="flex flex-col gap-4">
+                    <!-- Domain Item -->
+                    <div
+                        class="bg-white/[0.03] border border-white/10 p-6 rounded-[var(--radius)] flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-300 backdrop-blur-sm group hover:border-[var(--color-accent)] hover:bg-white/[0.08] hover:translate-x-2">
+                        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                            <span
+                                class="font-mono text-2xl md:text-3xl text-white font-bold tracking-tight">www.ailogic.cz</span>
+                            <span
+                                class="bg-[rgba(0,204,152,0.1)] text-[var(--color-accent)] py-1.5 px-4 rounded-full text-xs uppercase tracking-widest font-bold border border-[rgba(0,204,152,0.3)]">Na
+                                prodej</span>
+                        </div>
+                        <a href="#kontakt"
+                            class="w-full md:w-auto text-center py-3 px-6 text-sm bg-white text-[var(--color-bg-dark)] hover:bg-[var(--color-accent)] hover:text-white inline-block rounded-[var(--radius)] no-underline font-bold transition-all duration-200 cursor-pointer">Mám
+                            zájem</a>
                     </div>
-                    <div class="domain-card">
-                        <span class="domain-name">www.aifun.cz</span>
-                        <span class="domain-status available">Na prodej</span>
-                        <a href="#kontakt" class="btn btn-sm">Mám zájem</a>
+
+                    <!-- Domain Item -->
+                    <div
+                        class="bg-white/[0.03] border border-white/10 p-6 rounded-[var(--radius)] flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-300 backdrop-blur-sm group hover:border-[var(--color-accent)] hover:bg-white/[0.08] hover:translate-x-2">
+                        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                            <span
+                                class="font-mono text-2xl md:text-3xl text-white font-bold tracking-tight">www.aifun.cz</span>
+                            <span
+                                class="bg-[rgba(0,204,152,0.1)] text-[var(--color-accent)] py-1.5 px-4 rounded-full text-xs uppercase tracking-widest font-bold border border-[rgba(0,204,152,0.3)]">Na
+                                prodej</span>
+                        </div>
+                        <a href="#kontakt"
+                            class="w-full md:w-auto text-center py-3 px-6 text-sm bg-white text-[var(--color-bg-dark)] hover:bg-[var(--color-accent)] hover:text-white inline-block rounded-[var(--radius)] no-underline font-bold transition-all duration-200 cursor-pointer">Mám
+                            zájem</a>
                     </div>
                 </div>
             </div>
         </section>
-        </section>
+
 
         <!-- WOW Graphic Feature: Rolling Text Separator -->
-        <div class="wow-separator">
-            <div class="rolling-text-track">
-                <div class="rolling-text-item">WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
-                <div class="rolling-text-item">WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
-                <div class="rolling-text-item">WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
-                <div class="rolling-text-item">WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
+        <div
+            class="bg-[var(--color-bg-dark)] py-8 overflow-hidden relative border-y border-white/5 before:content-[''] before:absolute before:top-0 before:bottom-0 before:w-[50px] md:before:w-[150px] before:z-[2] before:pointer-events-none before:left-0 before:bg-gradient-to-r before:from-[var(--color-bg-dark)] before:to-transparent after:content-[''] after:absolute after:top-0 after:bottom-0 after:w-[50px] md:after:w-[150px] after:z-[2] after:pointer-events-none after:right-0 after:bg-gradient-to-l after:from-[var(--color-bg-dark)] after:to-transparent group/wow">
+            <div class="flex gap-8 md:gap-16 w-max animate-roll-left -skew-x-12">
+                <div
+                    class="text-[2.5rem] md:text-[5rem] font-black uppercase text-[rgba(0,204,152,0.15)] [-webkit-text-stroke:1px_var(--color-accent)] md:[-webkit-text-stroke:2px_var(--color-accent)] whitespace-nowrap transition-all duration-300 leading-none [text-shadow:0_0_30px_rgba(0,204,152,0.4)] md:[text-shadow:0_0_20px_rgba(0,204,152,0.2)] hover:opacity-100 hover:text-[rgba(0,204,152,0.15)] hover:[text-shadow:0_0_40px_rgba(0,204,152,0.4)]">
+                    WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
+                <div
+                    class="text-[2.5rem] md:text-[5rem] font-black uppercase text-[rgba(0,204,152,0.15)] [-webkit-text-stroke:1px_var(--color-accent)] md:[-webkit-text-stroke:2px_var(--color-accent)] whitespace-nowrap transition-all duration-300 leading-none [text-shadow:0_0_30px_rgba(0,204,152,0.4)] md:[text-shadow:0_0_20px_rgba(0,204,152,0.2)] hover:opacity-100 hover:text-[rgba(0,204,152,0.15)] hover:[text-shadow:0_0_40px_rgba(0,204,152,0.4)]">
+                    WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
+                <div
+                    class="text-[2.5rem] md:text-[5rem] font-black uppercase text-[rgba(0,204,152,0.15)] [-webkit-text-stroke:1px_var(--color-accent)] md:[-webkit-text-stroke:2px_var(--color-accent)] whitespace-nowrap transition-all duration-300 leading-none [text-shadow:0_0_30px_rgba(0,204,152,0.4)] md:[text-shadow:0_0_20px_rgba(0,204,152,0.2)] hover:opacity-100 hover:text-[rgba(0,204,152,0.15)] hover:[text-shadow:0_0_40px_rgba(0,204,152,0.4)]">
+                    WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
+                <div
+                    class="text-[2.5rem] md:text-[5rem] font-black uppercase text-[rgba(0,204,152,0.15)] [-webkit-text-stroke:1px_var(--color-accent)] md:[-webkit-text-stroke:2px_var(--color-accent)] whitespace-nowrap transition-all duration-300 leading-none [text-shadow:0_0_30px_rgba(0,204,152,0.4)] md:[text-shadow:0_0_20px_rgba(0,204,152,0.2)] hover:opacity-100 hover:text-[rgba(0,204,152,0.15)] hover:[text-shadow:0_0_40px_rgba(0,204,152,0.4)]">
+                    WEB DESIGN • E-COMMERCE • STRATEGIE • RŮST • </div>
             </div>
         </div>
 
 
-        <section id="kontakt" class="section contact">
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <h2>Pojďme spolupracovat</h2>
-                        <p>Máte zájem o nový e-shop, grafické práce nebo máte zálusk na jednu z domén? Napište mi nebo
+        <section id="kontakt" class="bg-[var(--color-bg-dark)] py-12 text-white border-b-0">
+            <div class="w-full max-w-[900px] mx-auto px-6 text-center">
+                <div class="mx-auto text-center">
+                    <div class="mb-8">
+                        <h2 class="text-5xl font-extrabold mb-8 mt-0 tracking-tighter text-white">Pojďme spolupracovat
+                        </h2>
+                        <p class="text-[#cbd5e1] text-xl max-w-[700px] mx-auto">Máte zájem o nový e-shop, grafické práce
+                            nebo máte zálusk na jednu z domén? Napište mi nebo
                             zavolejte.</p>
 
-                        <div class="contact-list">
-                            <div class="contact-item">
-                                <span class="label">Telefon</span>
-                                <a href="tel:+420731875888" class="value">+420 731 875 888</a>
+                        <div class="flex justify-center gap-8 my-8 flex-wrap">
+                            <div
+                                class="flex flex-col items-center gap-2 p-6 border-2 border-transparent rounded-[var(--radius)] transition-all duration-300 hover:border-white/10 hover:bg-white/5 group">
+                                <span
+                                    class="text-base uppercase text-[#94a3b8] tracking-widest font-extrabold">Telefon</span>
+                                <a href="tel:+420731875888"
+                                    class="text-[1.8rem] font-bold text-[var(--color-accent)] no-underline hover:underline">+420
+                                    731 875 888</a>
                             </div>
-                            <div class="contact-item">
-                                <span class="label">Email</span>
-                                <a href="mailto:info@martinaku.cz" class="value">info@martinaku.cz</a>
+                            <div
+                                class="flex flex-col items-center gap-2 p-6 border-2 border-transparent rounded-[var(--radius)] transition-all duration-300 hover:border-white/10 hover:bg-white/5 group">
+                                <span
+                                    class="text-base uppercase text-[#94a3b8] tracking-widest font-extrabold">Email</span>
+                                <a href="mailto:info@martinaku.cz"
+                                    class="text-[1.8rem] font-bold text-[var(--color-accent)] no-underline hover:underline">info@martinaku.cz</a>
                             </div>
-                            <div class="contact-item billing-item">
-                                <span class="label">Fakturační údaje</span>
-                                <p class="value-text">
+                            <div
+                                class="flex flex-col items-center gap-2 p-6 border-2 border-transparent rounded-[var(--radius)] transition-all duration-300 hover:border-white/10 hover:bg-white/5 min-w-[280px]">
+                                <span
+                                    class="text-base uppercase text-[#94a3b8] tracking-widest font-extrabold">Fakturační
+                                    údaje</span>
+                                <p class="text-[1.1rem] font-medium text-white leading-[1.6] m-0">
                                     Martin Akulšin<br>
                                     IČ: 87665603<br>
                                     Nejsem plátce DPH
@@ -237,9 +346,116 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Martin Akulšin. Všechna práva vyhrazena.</p>
+    <footer
+        class="bg-[#020617] text-[#94a3b8] pt-24 text-base relative overflow-hidden border-t-0 before:content-[''] before:absolute before:top-[-100px] before:right-[-100px] before:w-[600px] before:h-[600px] before:bg-[radial-gradient(circle,_rgba(0,204,152,0.05)_0%,_transparent_70%)] before:pointer-events-none">
+        <div
+            class="w-full max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1.5fr] gap-12 pb-20 relative z-[1] text-center md:text-left justify-items-center md:justify-items-start">
+            <div class="flex flex-col items-center md:items-start">
+                <a href="#" class="inline-block mb-6">
+                    <img src="logo.png" alt="Martin Akulšin Logo"
+                        class="h-[40px] w-auto brightness-0 invert opacity-90 transition-opacity duration-300 hover:opacity-100">
+                </a>
+                <p class="max-w-[400px] mb-8 leading-[1.6]">
+                    Káva osobně, nebo přes Google Meet? Výběr je na vás. Hlavní je probrat váš projekt a nastavit cestu
+                    k dlouhodobým výsledkům.
+                </p>
+                <div
+                    class="inline-flex items-center gap-3 bg-[rgba(15,23,42,0.6)] border border-[rgba(249,115,22,0.3)] py-2 px-4 rounded-full text-sm text-[#e2e8f0] font-medium transition-all duration-300 cursor-default hover:border-[#f97316] hover:bg-[rgba(249,115,22,0.1)] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(249,115,22,0.1)]">
+                    <span
+                        class="w-2 h-2 bg-[#f97316] rounded-full relative shadow-[0_0_0_rgba(249,115,22,0.4)] animate-[pulse-orange_2s_infinite]">
+                        <style>
+                            @keyframes pulse-orange {
+                                0% {
+                                    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+                                }
+
+                                70% {
+                                    box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+                                }
+
+                                100% {
+                                    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+                                }
+                            }
+                        </style>
+                    </span>
+                    <span class="status-text">Poslední volné kapacity</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg font-bold mb-6 tracking-wide">Rychlá navigace</h4>
+                <ul class="list-none p-0 flex flex-col gap-4">
+                    <li><a href="#sluzby"
+                            class="text-[#94a3b8] no-underline transition-all duration-200 inline-block relative w-fit hover:text-white md:hover:translate-x-1.5 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-[var(--color-accent)] after:transition-[width] after:duration-300 hover:after:w-full">Služby</a>
+                    </li>
+                    <li><a href="#domeny"
+                            class="text-[#94a3b8] no-underline transition-all duration-200 inline-block relative w-fit hover:text-white md:hover:translate-x-1.5 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-[var(--color-accent)] after:transition-[width] after:duration-300 hover:after:w-full">Domény</a>
+                    </li>
+                    <li><a href="#kontakt"
+                            class="text-[#94a3b8] no-underline transition-all duration-200 inline-block relative w-fit hover:text-white md:hover:translate-x-1.5 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-[var(--color-accent)] after:transition-[width] after:duration-300 hover:after:w-full">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg font-bold mb-6 tracking-wide">Buďme v kontaktu</h4>
+                <div class="flex flex-col gap-4 mb-8">
+                    <a href="mailto:info@martinaku.cz"
+                        class="flex items-center gap-3 text-[#cbd5e1] no-underline transition-all duration-200 font-medium hover:text-[var(--color-accent)] hover:translate-x-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-[var(--color-accent)]">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        info@martinaku.cz
+                    </a>
+                    <a href="tel:+420731875888"
+                        class="flex items-center gap-3 text-[#cbd5e1] no-underline transition-all duration-200 font-medium hover:text-[var(--color-accent)] hover:translate-x-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-[var(--color-accent)]">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        +420 731 875 888
+                    </a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="flex items-center justify-center w-[44px] h-[44px] bg-white/[0.03] border border-white/10 rounded-full text-white transition-all duration-300 cubic-bezier-[0.175,0.885,0.32,1.275] hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] hover:text-[#022c22] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_10px_20px_-5px_rgba(0,204,152,0.4)]"
+                        aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="flex items-center justify-center w-[44px] h-[44px] bg-white/[0.03] border border-white/10 rounded-full text-white transition-all duration-300 cubic-bezier-[0.175,0.885,0.32,1.275] hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] hover:text-[#022c22] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_10px_20px_-5px_rgba(0,204,152,0.4)]"
+                        aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 py-8 bg-[#00020a]">
+            <div
+                class="w-full max-w-[1200px] mx-auto px-6 flex justify-between items-center text-sm text-[#64748b] flex-col md:flex-row gap-4 text-center md:text-left">
+                <p>&copy; 2026 Martin Akulšin.</p>
+                <div class="inline-flex items-center gap-1">
+                    <span>Design by <span class="text-[var(--color-accent)]">Me</span></span>
+                </div>
+            </div>
         </div>
     </footer>
 
