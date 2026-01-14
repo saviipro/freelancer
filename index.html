@@ -41,16 +41,59 @@
                     <li><a href="#domeny"
                             class="no-underline text-[var(--color-text-secondary)] font-bold text-[1.05rem] transition-colors hover:text-[var(--color-accent)]">Domény</a>
                     </li>
+                    <li><a href="#portfolio"
+                            class="no-underline text-[var(--color-text-secondary)] font-bold text-[1.05rem] transition-colors hover:text-[var(--color-accent)]">Portfolio</a>
+                    </li>
+                    <li><a href="#omne"
+                            class="no-underline text-[var(--color-text-secondary)] font-bold text-[1.05rem] transition-colors hover:text-[var(--color-accent)]">O
+                            mně</a></li>
                     <li><a href="#kontakt"
-                            class="inline-block py-3.5 px-8 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-lg bg-[var(--color-accent)] border-3 border-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(0,204,152,0.4)]">Kontaktovat</a>
+                            class="inline-block py-2.5 px-6 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-base bg-[var(--color-accent)] border-3 border-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(0,204,152,0.4)]">Kontaktovat</a>
                     </li>
                 </ul>
             </nav>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu"
+                class="fixed inset-0 bg-white/98 backdrop-blur-xl z-[1050] flex flex-col pt-32 px-8 gap-8 transition-transform duration-300 translate-x-full md:hidden">
+                <ul class="flex flex-col gap-6 list-none items-center text-center">
+                    <li><a href="#sluzby"
+                            class="mobile-link text-3xl font-bold text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors">Služby</a>
+                    </li>
+                    <li><a href="#domeny"
+                            class="mobile-link text-3xl font-bold text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors">Domény</a>
+                    </li>
+                    <li><a href="#portfolio"
+                            class="mobile-link text-3xl font-bold text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors">Portfolio</a>
+                    </li>
+                    <li><a href="#omne"
+                            class="mobile-link text-3xl font-bold text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors">O
+                            mně</a></li>
+                    <li><a href="#kontakt"
+                            class="mobile-link text-3xl font-bold text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors">Kontakt</a>
+                    </li>
+                </ul>
+
+                <div class="mt-8 flex flex-col items-center gap-6 border-t border-[var(--color-border)] pt-8">
+                    <!-- Status Bar (Mobile) -->
+                    <div
+                        class="inline-flex items-center gap-3 bg-[rgba(15,23,42,0.05)] border border-[rgba(249,115,22,0.3)] py-2 px-4 rounded-full text-sm text-[var(--color-text-primary)] font-medium">
+                        <span
+                            class="w-2 h-2 bg-[#f97316] rounded-full relative shadow-[0_0_0_rgba(249,115,22,0.4)] animate-[pulse-orange_2s_infinite]"></span>
+                        <span class="status-text">Poslední volné kapacity</span>
+                    </div>
+
+                    <a href="#kontakt"
+                        class="w-full text-center py-4 rounded-[var(--radius)] font-bold text-lg bg-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] transition-all">
+                        Spolupracovat
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
-        <section
+        <section id="omne"
             class="pt-44 pb-28 bg-[radial-gradient(circle_at_top_right,#f0fdf9_0%,#ffffff_100%)] border-b border-[var(--color-border)] overflow-hidden">
             <div
                 class="w-full max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center text-center md:text-left">
@@ -60,15 +103,13 @@
                         Udělejte ve svém byznysu jasno. Online.</h1>
                     <p
                         class="text-xl text-[var(--color-text-secondary)] max-w-full mb-10 font-normal text-left md:text-left leading-[1.8]">
-                        Jsem vaším partnerem v digitálním světě. Od strategie přes design až po
-                        spuštění.</p>
+                        Jsem vaším partnerem v digitálním světě. Od strategie přes design až po spuštění.</p>
                     <div class="flex gap-4 justify-center md:justify-start">
                         <a href="#sluzby"
-                            class="inline-block py-3.5 px-8 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-lg bg-[var(--color-accent)] border-3 border-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(0,204,152,0.4)]">Moje
+                            class="inline-block py-3 px-6 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-base bg-[var(--color-accent)] border-3 border-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(0,204,152,0.4)]">Moje
                             služby</a>
-                        <a href="#kontakt"
-                            class="inline-block py-3.5 px-8 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-lg bg-transparent text-[var(--color-text-primary)] border-3 border-[var(--color-border-strong)] hover:border-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)]">Napište
-                            mi</a>
+                        <a href="#portfolio"
+                            class="inline-block py-3 px-6 rounded-[var(--radius)] no-underline font-semibold transition-all duration-200 cursor-pointer text-base bg-transparent text-[var(--color-text-primary)] border-3 border-[var(--color-border-strong)] hover:border-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)]">Portfolio</a>
                     </div>
                 </div>
                 <div class="relative flex justify-center items-center order-2 md:order-none mt-8 md:mt-0">
@@ -83,7 +124,7 @@
             </div>
         </section>
 
-        <section class="bg-white py-16 border-b border-[var(--color-border)] overflow-hidden">
+        <section id="portfolio" class="bg-white py-16 border-b border-[var(--color-border)] overflow-hidden">
             <div class="w-full max-w-[1200px] mx-auto px-6">
                 <h2 class="text-5xl font-extrabold mb-8 text-center tracking-tighter text-[var(--color-accent)]">
                     Reference</h2>
@@ -208,6 +249,26 @@
                             class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
                             Úpravy vzhledu šablony na míru. CSS stylování, úprava hlavičky, patičky a detailu produktu
                             pro odlišení od konkurence.</p>
+                        <div
+                            class="bg-white border border-[var(--color-border)] rounded-[var(--radius)] p-8 transition-all duration-300 cubic-bezier-[0.4,0,0.2,1] relative overflow-hidden shadow-sm grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-6 gap-y-4 items-center hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:border-[var(--color-accent)] group">
+                            <div
+                                class="text-[2rem] mb-0 bg-[var(--color-bg-secondary)] w-[60px] h-[60px] flex items-center justify-center rounded-full border-2 border-[var(--color-border)] text-black transition-all duration-300 shrink-0 group-hover:text-white group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] group-hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="2" x2="8" y2="22"></line>
+                                    <line x1="16" y1="2" x2="16" y2="22"></line>
+                                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                                </svg>
+                            </div>
+                            <h3 class="mb-0 text-[1.35rem] font-extrabold col-start-2 row-start-1 leading-[1.2]">
+                                Jednostránkové<br class="hidden max-md:inline"> weby a vizitky</h3>
+                            <p
+                                class="text-[var(--color-text-secondary)] text-base col-span-full row-start-2 mt-2 leading-[1.6]">
+                                Rychlé, moderní a efektivní prezentace pro vaše podnikání. Ideální pro freelancery, malé
+                                firmy nebo propagaci konkrétního produktu.</p>
+                        </div>
                     </div>
 
                     <!-- Konzultace a Růst -->

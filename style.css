@@ -218,6 +218,9 @@
   .relative {
     position: relative;
   }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -241,6 +244,9 @@
   }
   .z-\[1000\] {
     z-index: 1000;
+  }
+  .z-\[1050\] {
+    z-index: 1050;
   }
   .z-\[1100\] {
     z-index: 1100;
@@ -397,6 +403,14 @@
   }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-x-0 {
+    --tw-translate-x: calc(var(--spacing) * 0);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-x-full {
+    --tw-translate-x: 100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-skew-x-12 {
@@ -591,6 +605,9 @@
   .bg-\[rgba\(0\,204\,152\,0\.1\)\] {
     background-color: rgba(0,204,152,0.1);
   }
+  .bg-\[rgba\(15\,23\,42\,0\.05\)\] {
+    background-color: rgba(15,23,42,0.05);
+  }
   .bg-\[rgba\(15\,23\,42\,0\.6\)\] {
     background-color: rgba(15,23,42,0.6);
   }
@@ -619,6 +636,12 @@
     background-color: color-mix(in srgb, #fff 95%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-white) 95%, transparent);
+    }
+  }
+  .bg-white\/98 {
+    background-color: color-mix(in srgb, #fff 98%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 98%, transparent);
     }
   }
   .bg-white\/\[0\.03\] {
@@ -663,11 +686,14 @@
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
-  .py-3\.5 {
-    padding-block: calc(var(--spacing) * 3.5);
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
@@ -687,8 +713,14 @@
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
   }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
   .pt-24 {
     padding-top: calc(var(--spacing) * 24);
+  }
+  .pt-32 {
+    padding-top: calc(var(--spacing) * 32);
   }
   .pt-44 {
     padding-top: calc(var(--spacing) * 44);
@@ -714,6 +746,10 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-5xl {
     font-size: var(--text-5xl);

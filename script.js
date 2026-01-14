@@ -1,19 +1,32 @@
-// Mobile Menu Logic
 const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
-const navLinks = document.querySelectorAll('.nav-list a');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+const body = document.body;
 
-if (menuToggle && nav) {
+if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        menuToggle.classList.toggle('active');
+        const isOpen = mobileMenu.classList.contains('translate-x-0');
+
+        if (isOpen) {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            menuToggle.classList.remove('active');
+            body.classList.remove('overflow-hidden');
+        } else {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            menuToggle.classList.add('active');
+            body.classList.add('overflow-hidden');
+        }
     });
 
     // Close menu when a link is clicked
-    navLinks.forEach(link => {
+    mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            nav.classList.remove('active');
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
             menuToggle.classList.remove('active');
+            body.classList.remove('overflow-hidden');
         });
     });
 }
@@ -24,9 +37,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
+            if (target) {
+                // Adjust offset for fixed header
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
         }
     });
 });
@@ -56,5 +77,46 @@ if (marquee) {
         }, 100);
     });
 }
+
+// Czech Typography Fixer (Prevent orphans)
+function fixCzechTypography() {
+    const prepositions = ['k', 's', 'v', 'z', 'o', 'u', 'i', 'a'];
+    const regex = new RegExp(`\\b(${prepositions.join('|')})\\s+`, 'gmi');
+
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode: function (node) {
+                // Skip script and style tags
+                if (node.parentElement.tagName === 'SCRIPT' || node.parentElement.tagName === 'STYLE') {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        },
+        false
+    );
+
+    let node;
+    const nodesToReplace = [];
+
+    while (node = walker.nextNode()) {
+        if (regex.test(node.nodeValue)) {
+            nodesToReplace.push(node);
+        }
+    }
+
+    nodesToReplace.forEach(node => {
+        const newValue = node.nodeValue.replace(regex, '$1\u00A0'); // Replace space with &nbsp;
+        if (node.nodeValue !== newValue) {
+            node.nodeValue = newValue;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fixCzechTypography();
+});
 
 console.log("Martin Akulšin - Portfolio Loaded");
