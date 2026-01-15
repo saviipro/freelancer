@@ -8,11 +8,27 @@
     <title>Martin Akulšin - Shoptet Bronzový Partner & Freelancer</title>
     <meta name="description"
         content="Jsem Martin Akulšin, Shoptet Bronzový Partner. Pomáhám podnikatelům nastartovat e-shopy, tvořím grafiku, fotím produkty a nabízím konzultace.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="design.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <style>
+        /* CRITICAL: Force Mobile Menu visibility and styles */
+        #mobile-menu {
+            z-index: 9999 !important;
+            background-color: #0f172a !important;
+        }
+
+        .menu-toggle {
+            z-index: 10000 !important;
+        }
+
+        /* Make cross white when active */
+        .menu-toggle.active span {
+            background-color: #ffffff !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +40,7 @@
                 <img src="logo.png" alt="Martin Akulšin Logo" class="h-[50px] w-auto object-contain">
             </a>
             <button
-                class="menu-toggle cursor-pointer bg-transparent border-none w-[30px] h-[21px] flex flex-col justify-between md:hidden z-[1100]"
+                class="menu-toggle cursor-pointer bg-transparent border-none w-[30px] h-[21px] flex flex-col justify-between md:hidden z-[1300]"
                 aria-label="Otevřít menu">
                 <span
                     class="w-full h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
@@ -53,43 +69,6 @@
                     </li>
                 </ul>
             </nav>
-
-            <!-- Mobile Menu Overlay -->
-            <div id="mobile-menu"
-                class="fixed inset-0 z-[1050] flex flex-col items-center justify-center gap-12 transition-transform duration-300 translate-x-full md:hidden bg-[#0f172a]"
-                style="background-color: #0f172a !important; opacity: 1 !important;">
-
-                <ul class="flex flex-col gap-8 list-none items-center text-center p-0 m-0 w-full">
-                    <li><a href="#sluzby"
-                            class="mobile-link text-4xl font-extrabold text-white hover:text-[var(--color-accent)] transition-colors tracking-tight">Služby</a>
-                    </li>
-                    <li><a href="#domeny"
-                            class="mobile-link text-4xl font-extrabold text-white hover:text-[var(--color-accent)] transition-colors tracking-tight">Domény</a>
-                    </li>
-                    <li><a href="#reference"
-                            class="mobile-link text-4xl font-extrabold text-white hover:text-[var(--color-accent)] transition-colors tracking-tight">Reference</a>
-                    </li>
-                    <li><a href="#omne"
-                            class="mobile-link text-4xl font-extrabold text-white hover:text-[var(--color-accent)] transition-colors tracking-tight">O
-                            mně</a></li>
-                    <li><a href="#kontakt"
-                            class="mobile-link text-4xl font-extrabold text-white hover:text-[var(--color-accent)] transition-colors tracking-tight">Kontakt</a>
-                    </li>
-                </ul>
-
-                <div class="mt-4">
-                    <a href="tel:+420731875888"
-                        class="inline-flex items-center gap-3 py-4 px-8 rounded-[var(--radius)] font-bold text-xl bg-[var(--color-accent)] text-[#022c22] border-3 border-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] transition-all shadow-[0_4px_20px_rgba(0,204,152,0.4)] hover:-translate-y-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                            </path>
-                        </svg>
-                        Zavolat Martinovi
-                    </a>
-                </div>
-            </div>
 
 
         </div>
@@ -483,6 +462,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Overlay (Moved outside Header for correct Fixed positioning) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[1250] flex flex-col items-center justify-center gap-12 transition-transform duration-300 translate-x-full md:hidden bg-[#0f172a] overflow-y-auto"
+        style="background-color: #0f172a !important; opacity: 1 !important; visibility: visible !important;">
+
+        <!-- Close Button (Absolute Top Right) -->
+        <button id="close-menu-btn"
+            class="absolute top-6 right-6 p-2 text-white/80 hover:text-white transition-colors cursor-pointer bg-transparent border-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <ul class="flex flex-col gap-6 list-none items-center text-center p-0 m-0 w-full">
+            <li><a href="#sluzby"
+                    class="mobile-link text-2xl font-semibold text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Služby</a>
+            </li>
+            <li><a href="#domeny"
+                    class="mobile-link text-2xl font-semibold text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Domény</a>
+            </li>
+            <li><a href="#reference"
+                    class="mobile-link text-2xl font-semibold text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Reference</a>
+            </li>
+            <li><a href="#omne"
+                    class="mobile-link text-2xl font-semibold text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">O
+                    mně</a></li>
+            <li><a href="#kontakt"
+                    class="mobile-link text-2xl font-semibold text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Kontakt</a>
+            </li>
+        </ul>
+
+        <div class="mt-4">
+            <a href="tel:+420731875888"
+                class="inline-flex items-center gap-3 py-3 px-8 rounded-full font-bold text-lg bg-[var(--color-accent)] text-[#022c22] hover:bg-[var(--color-accent-hover)] transition-all shadow-lg hover:-translate-y-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>
+                Zavolat Martinovi
+            </a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

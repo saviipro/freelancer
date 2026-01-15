@@ -1,17 +1,22 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
+const closeMenuBtn = document.getElementById('close-menu-btn');
 const mobileLinks = document.querySelectorAll('.mobile-link');
 const body = document.body;
+
+function closeMenu() {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    menuToggle.classList.remove('active');
+    body.classList.remove('overflow-hidden');
+}
 
 if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.contains('translate-x-0');
 
         if (isOpen) {
-            mobileMenu.classList.remove('translate-x-0');
-            mobileMenu.classList.add('translate-x-full');
-            menuToggle.classList.remove('active');
-            body.classList.remove('overflow-hidden');
+            closeMenu();
         } else {
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
@@ -20,14 +25,13 @@ if (menuToggle && mobileMenu) {
         }
     });
 
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', closeMenu);
+    }
+
     // Close menu when a link is clicked
     mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-0');
-            mobileMenu.classList.add('translate-x-full');
-            menuToggle.classList.remove('active');
-            body.classList.remove('overflow-hidden');
-        });
+        link.addEventListener('click', closeMenu);
     });
 }
 
