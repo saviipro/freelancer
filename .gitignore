@@ -1,0 +1,28 @@
+# Citlivé údaje a konfigurace
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Závislosti (knihovny) - tyhle se stahují znovu pomocí npm install
+node_modules/
+jspm_packages/
+
+# Výstupy kompilace (pokud používáš React, Vue, Vite apod.)
+dist/
+build/
+.cache/
+
+# Logy a dočasné soubory
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# IDE (nastavení tvého editoru - VS Code, WebStorm atd.)
+.vscode/
+.idea/
+*.swp
+*.swo
