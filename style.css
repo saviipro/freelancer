@@ -220,9 +220,6 @@
   .relative {
     position: relative;
   }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
-  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -243,12 +240,6 @@
   }
   .z-\[1\] {
     z-index: 1;
-  }
-  .z-\[1050\] {
-    z-index: 1050;
-  }
-  .z-\[1100\] {
-    z-index: 1100;
   }
   .z-\[1200\] {
     z-index: 1200;
@@ -328,12 +319,6 @@
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
-  .h-\[3px\] {
-    height: 3px;
-  }
-  .h-\[21px\] {
-    height: 21px;
-  }
   .h-\[50px\] {
     height: 50px;
   }
@@ -345,9 +330,6 @@
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
-  }
-  .w-\[30px\] {
-    width: 30px;
   }
   .w-\[60px\] {
     width: 60px;
@@ -482,9 +464,6 @@
   .rounded-\[2rem\] {
     border-radius: 2rem;
   }
-  .rounded-\[3px\] {
-    border-radius: 3px;
-  }
   .rounded-\[var\(--radius\)\] {
     border-radius: var(--radius);
   }
@@ -561,9 +540,6 @@
       border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
     }
   }
-  .bg-\[\#0f172a\] {
-    background-color: #0f172a;
-  }
   .bg-\[\#00020a\] {
     background-color: #00020a;
   }
@@ -590,9 +566,6 @@
   }
   .bg-\[var\(--color-bg-secondary\)\] {
     background-color: var(--color-bg-secondary);
-  }
-  .bg-\[var\(--color-text-primary\)\] {
-    background-color: var(--color-text-primary);
   }
   .bg-transparent {
     background-color: transparent;
@@ -642,9 +615,6 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
-  .px-8 {
-    padding-inline: calc(var(--spacing) * 8);
-  }
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
   }
@@ -656,9 +626,6 @@
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
@@ -674,12 +641,6 @@
   }
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
-  }
-  .pt-8 {
-    padding-top: calc(var(--spacing) * 8);
-  }
-  .pt-32 {
-    padding-top: calc(var(--spacing) * 32);
   }
   .pt-44 {
     padding-top: calc(var(--spacing) * 44);
@@ -702,10 +663,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-4xl {
     font-size: var(--text-4xl);
@@ -1446,11 +1403,6 @@
   .md\:block {
     @media (width >= 48rem) {
       display: block;
-    }
-  }
-  .md\:hidden {
-    @media (width >= 48rem) {
-      display: none;
     }
   }
   .md\:w-auto {
