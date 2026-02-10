@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
+    const finalEnv = { ...process.env, ...env };
 
     return {
         base: './',
@@ -21,7 +22,7 @@ export default defineConfig(({ mode }) => {
                 name: 'html-transform',
                 transformIndexHtml(html) {
                     return html.replace(/%(\w+)%/g, (match, p1) => {
-                        return env[p1] || match;
+                        return finalEnv[p1] || match;
                     });
                 },
             },
