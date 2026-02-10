@@ -28,6 +28,7 @@ jobs:
         env:
           VITE_GTM_ID: ${{ secrets.VITE_GTM_ID }}
           VITE_COOKIEYES_ID: ${{ secrets.VITE_COOKIEYES_ID }}
+          VITE_GTM_CONTAINER_ID: ${{ secrets.VITE_GTM_CONTAINER_ID }}
         run: npm run build
 
       - name: Deploy
