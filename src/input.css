@@ -38,6 +38,13 @@
     }
 }
 
+/* Prevent horizontal scroll on iOS caused by marquee animations */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 /* Custom Utilities */
 .menu-toggle.active span {
     background-color: #ffffff;
