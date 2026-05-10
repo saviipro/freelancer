@@ -3,28 +3,41 @@
     class="scroll-smooth text-[18px] text-[var(--color-text-primary)] bg-[var(--color-bg-primary)] leading-relaxed font-[family-name:var(--font-main)]">
 
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', '%VITE_GTM_CONTAINER_ID%');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Start cookieyes banner (defer = nebrání renderu) -->
+    <!-- Cookieyes consent banner (defer - musí načíst brzy pro GDPR UX) -->
     <script id="cookieyes" type="text/javascript" defer
         src="https://cdn-cookieyes.com/client_data/%VITE_COOKIEYES_ID%/script.js"></script>
-    <!-- End cookieyes banner -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GTM_ID%"></script>
+    <!-- Google Tag Manager + gtag.js: delay-load až po user interaction nebo 5s timeout
+         (eliminuje ~231 KiB nepoužívaného JS z initial pageload) -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', '%VITE_GTM_ID%');
+        (function () {
+            var loaded = false;
+            var triggers = ['scroll', 'click', 'touchstart', 'keydown', 'mousemove'];
+            function loadAnalytics() {
+                if (loaded) return;
+                loaded = true;
+                triggers.forEach(function (t) { window.removeEventListener(t, loadAnalytics); });
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', '%VITE_GTM_ID%');
+                var s1 = document.createElement('script');
+                s1.async = true;
+                s1.src = 'https://www.googletagmanager.com/gtag/js?id=%VITE_GTM_ID%';
+                document.head.appendChild(s1);
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                    var f = d.getElementsByTagName(s)[0], j = d.createElement(s),
+                        dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', '%VITE_GTM_CONTAINER_ID%');
+            }
+            triggers.forEach(function (t) {
+                window.addEventListener(t, loadAnalytics, { once: true, passive: true });
+            });
+            setTimeout(loadAnalytics, 5000);
+        })();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -166,26 +179,26 @@
                     class="w-full overflow-hidden relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:w-[100px] after:z-[2] after:pointer-events-none after:left-0 after:bg-gradient-to-r after:from-white after:to-transparent before:content-[''] before:absolute before:top-0 before:bottom-0 before:w-[100px] before:z-[2] before:pointer-events-none before:right-0 before:bg-gradient-to-l before:from-white before:to-transparent">
                     <div class="flex gap-16 w-max items-center animate-scroll hover:[animation-play-state:paused]">
                         <!-- Duplicate images for seamless loop -->
-                        <img src="logos/logo1.webp" alt="Klient 1"
+                        <img src="logos/logo1.webp" alt="Klient 1" width="150" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo2.webp" alt="Klient 2"
+                        <img src="logos/logo2.webp" alt="Klient 2" width="60" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo3.webp" alt="Klient 3"
+                        <img src="logos/logo3.webp" alt="Klient 3" width="60" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo4.webp" alt="Klient 4"
+                        <img src="logos/logo4.webp" alt="Klient 4" width="60" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo5.webp" alt="Klient 5"
+                        <img src="logos/logo5.webp" alt="Klient 5" width="230" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
                         <!-- Duplicates -->
-                        <img src="logos/logo1.webp" alt="Klient 1"
+                        <img src="logos/logo1.webp" alt="Klient 1" width="150" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo2.webp" alt="Klient 2"
+                        <img src="logos/logo2.webp" alt="Klient 2" width="60" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo3.webp" alt="Klient 3"
+                        <img src="logos/logo3.webp" alt="Klient 3" width="60" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo4.webp" alt="Klient 4"
+                        <img src="logos/logo4.webp" alt="Klient 4" width="60" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
-                        <img src="logos/logo5.webp" alt="Klient 5"
+                        <img src="logos/logo5.webp" alt="Klient 5" width="230" height="60"
                             class="h-[60px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-110">
                     </div>
                 </div>
@@ -1049,7 +1062,7 @@
                 <!-- Left Column: Branding & Bio -->
                 <div class="flex flex-col items-center md:items-start space-y-8 text-center md:text-left">
                     <a href="#" class="inline-block mb-8">
-                        <img src="logo.webp" alt="Martin Akulšin Logo"
+                        <img src="logo.webp" alt="Martin Akulšin Logo" width="47" height="50"
                             class="h-[50px] w-auto brightness-0 invert opacity-90 transition-opacity duration-300 hover:opacity-100">
                     </a>
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tighter text-[var(--color-accent)]">
