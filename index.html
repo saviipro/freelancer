@@ -13,8 +13,8 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-P3ZB9GDS');</script>
     <!-- End Google Tag Manager -->
-    <!-- Start cookieyes banner -->
-    <script id="cookieyes" type="text/javascript"
+    <!-- Start cookieyes banner (defer = nebrání renderu) -->
+    <script id="cookieyes" type="text/javascript" defer
         src="https://cdn-cookieyes.com/client_data/1ba603b8faed8e630f275991cb28c835/script.js"></script>
     <!-- End cookieyes banner -->
     <!-- Google tag (gtag.js) -->
@@ -34,8 +34,12 @@
     <link rel="icon" type="image/png" href="./assets/favicon-D1nzgW22.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <!-- Google Fonts: async load (nebrání renderu) -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 
     <style>
         /* CRITICAL: Force Mobile Menu visibility and styles */
