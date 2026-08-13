@@ -38,21 +38,28 @@ if (menuToggle && mobileMenu) {
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            if (target) {
-                // Adjust offset for fixed header
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const href = this.getAttribute('href');
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
+        // Holé "#" (logo v hlavičce) není platný selektor, znamená návrat nahoru.
+        if (href === '#') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
         }
+
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+        // Adjust offset for fixed header
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
     });
 });
 

@@ -21,28 +21,20 @@
 
 @theme {
     --font-main: 'Outfit', sans-serif;
-    --color-accent: #00CC98;
-    --color-accent-hover: #00a37a;
-    --color-bg-primary: #ffffff;
-    --color-bg-secondary: #f8fafc;
-    --color-bg-dark: #0f172a;
-    --color-text-primary: #0f172a;
-    --color-text-secondary: #334155;
-    --color-border: #e2e8f0;
-    --color-border-strong: #cbd5e1;
+    /* Tmavá paleta. Akcent má na pozadí kontrast 11:1, bílá 18:1. */
+    --color-accent: #45E588;
+    --color-accent-hover: #2FCB70;
+    /* Na tmavém pozadí je akcent čitelný i jako text, není nutná tmavší varianta. */
+    --color-accent-text: #45E588;
+    --color-bg-primary: #011818;
+    --color-bg-secondary: #0A1E1E;
+    --color-bg-dark: #011818;
+    --color-surface: #0F2222;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: rgba(255, 255, 255, 0.72);
+    --color-border: rgba(255, 255, 255, 0.10);
+    --color-border-strong: rgba(255, 255, 255, 0.18);
     --radius: 0.75rem;
-
-    --animate-roll-left: rollLeft 20s linear infinite;
-
-    @keyframes rollLeft {
-        0% {
-            transform: translateX(0) skewX(-10deg);
-        }
-
-        100% {
-            transform: translateX(-50%) skewX(-10deg);
-        }
-    }
 
     --animate-scroll: scroll 30s linear infinite;
 
@@ -62,6 +54,79 @@ html,
 body {
     overflow-x: hidden;
     max-width: 100vw;
+}
+
+/* Mávající ruka u pozdravu. Vypnuto pro prefers-reduced-motion níž v souboru. */
+@keyframes wave {
+
+    0%,
+    60%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10%,
+    30% {
+        transform: rotate(14deg);
+    }
+
+    20%,
+    40% {
+        transform: rotate(-8deg);
+    }
+}
+
+.wave {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave 2.6s ease-in-out infinite;
+}
+
+/* Světlý pás mezi tmavými sekcemi. Přepíše proměnné jen uvnitř sebe,
+   takže se veškerý obsah přebarví sám a nemusí se sahat do tříd v HTML. */
+.section-light {
+    --color-bg-primary: #F3F6F4;
+    --color-bg-secondary: #E7ECE9;
+    --color-surface: #ffffff;
+    --color-text-primary: #011818;
+    --color-text-secondary: #3B4B47;
+    --color-border: rgba(1, 24, 24, 0.12);
+    --color-border-strong: rgba(1, 24, 24, 0.20);
+    /* Svítivá zelená má na bílé kontrast 1,6:1, jako text je nepoužitelná. */
+    --color-accent-text: #0C6B47;
+
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+/* Loga klientů se na tmavém invertují, na světlém pásu se invert ruší. */
+.section-light .invert {
+    filter: grayscale(1);
+}
+
+/* Viditelný focus pro ovládání klávesnicí. Myší se neukazuje. */
+:focus-visible {
+    outline: 3px solid var(--color-accent-text);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Kdo má vypnuté animace, nemá se na co dívat. Pás log se zastaví. */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .animate-scroll {
+        animation: none !important;
+        transform: none !important;
+    }
 }
 
 /* Custom Utilities */

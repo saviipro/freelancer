@@ -13,6 +13,8 @@ export default defineConfig(({ mode }) => {
                 input: {
                     main: resolve(__dirname, 'index.html'),
                     projects: resolve(__dirname, 'projects.html'),
+                    akcenj: resolve(__dirname, 'akcenj.html'),
+                    domeny: resolve(__dirname, 'domeny.html'),
                     gdpr: resolve(__dirname, 'gdpr.html'),
                 },
             },
