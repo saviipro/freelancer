@@ -126,8 +126,42 @@ function fixCzechTypography() {
     });
 }
 
+// Nasvícení skupin karet, když se dostanou do pohledu.
+// Třída .reveal se přidává až tady, aby byl obsah vidět i bez JS.
+function revealOnScroll() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    // Mřížky, které by jinak naskočily naráz.
+    const groups = [
+        '#reference .grid > figure',
+        '#reference .grid > a',
+    ];
+    const items = groups.flatMap(sel => [...document.querySelectorAll(sel)]);
+    if (!items.length) return;
+
+    items.forEach(el => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        let step = 0;
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Karty ve stejném řádku nasvítit po sobě, ne všechny současně.
+                setTimeout(() => entry.target.classList.add('is-visible'), step++ * 50);
+                obs.unobserve(entry.target);
+            } else if (entry.boundingClientRect.bottom < 0) {
+                // Prvek už je nad výřezem, uživatel k němu přišel odkazem na kotvu
+                // nebo obnovením stránky. Zobrazit hned, bez animace, ať nezmizí obsah.
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+    items.forEach(el => observer.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     fixCzechTypography();
+    revealOnScroll();
 });
-
-console.log("Martin Akulšin - Portfolio Loaded");
