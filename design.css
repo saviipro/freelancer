@@ -768,9 +768,6 @@
   .bg-\[\#000E0E\] {
     background-color: #000E0E;
   }
-  .bg-\[\#00020a\] {
-    background-color: #00020a;
-  }
   .bg-\[\#011818\] {
     background-color: #011818;
   }
@@ -806,9 +803,6 @@
   }
   .bg-transparent {
     background-color: transparent;
-  }
-  .bg-white {
-    background-color: var(--color-white);
   }
   .bg-white\/5 {
     background-color: color-mix(in srgb, #fff 5%, transparent);
@@ -1101,9 +1095,6 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
-  }
-  .text-\[\#022c22\] {
-    color: #022c22;
   }
   .text-\[\#011818\] {
     color: #011818;
