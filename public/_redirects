@@ -1,0 +1,5 @@
+# Cloudflare Pages – přesměrování
+# Dokumentace: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Apex -> www (kanonická verze webu je www.martinaku.cz)
+https://martinaku.cz/* https://www.martinaku.cz/:splat 301!
