@@ -254,18 +254,18 @@
     <header class="fixed top-0 left-0 right-0 z-[1200] md:top-4 md:px-6">
         <div
             class="w-full max-w-[1180px] mx-auto px-6 py-3 flex justify-between items-center bg-[var(--color-bg-primary)]/85 backdrop-blur-xl border-b md:border border-[var(--color-border)] md:rounded-full">
-            <a href="#" class="flex items-center" aria-label="Martin Akulšin, zpět na úvod">
+            <a href="#" class="flex items-center p-1 -m-1" aria-label="Martin Akulšin, zpět na úvod">
                 <img src="logo.webp" alt="Logo Martin Akulšin" width="47" height="50" class="h-[44px] w-auto object-contain brightness-0 invert">
             </a>
             <button
-                class="menu-toggle cursor-pointer bg-transparent border-none w-[30px] h-[21px] flex flex-col justify-between md:hidden z-[1300]"
+                class="menu-toggle cursor-pointer bg-transparent border-none w-11 h-11 flex flex-col justify-center items-center gap-[6px] md:hidden z-[1300]"
                 aria-label="Otevřít menu">
                 <span
-                    class="w-full h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
+                    class="w-[30px] h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
                 <span
-                    class="w-full h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
+                    class="w-[30px] h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
                 <span
-                    class="w-full h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
+                    class="w-[30px] h-[3px] bg-[var(--color-text-primary)] rounded-[3px] transition-all duration-300"></span>
             </button>
 
             <nav class="nav md:block hidden">
@@ -1439,6 +1439,16 @@
         </div>
     </footer>
 
+    <!-- Zpět nahoru. Objeví se až po odscrollování, aby nahoře nepřekáželo. -->
+    <button id="back-to-top" type="button" aria-label="Zpět nahoru"
+        class="fixed bottom-5 right-5 z-[1150] w-11 h-11 flex items-center justify-center rounded-full bg-[var(--color-surface)] border border-[var(--color-border-strong)] text-[var(--color-text-secondary)] opacity-0 invisible transition-all duration-200 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] active:scale-95 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
     <!-- Mobile Menu Overlay (Moved outside Header for correct Fixed positioning) -->
     <div id="mobile-menu"
         class="fixed inset-0 z-[1250] flex flex-col items-center justify-center gap-12 transition-transform duration-300 translate-x-full md:hidden bg-[#011818] overflow-y-auto"
@@ -1456,25 +1466,25 @@
 
         <ul class="flex flex-col gap-5 list-none items-center text-center p-0 m-0 w-full">
                     <li><a href="#procja"
-                            class="mobile-link text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Proč já?</a>
+                            class="mobile-link inline-block py-2 text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Proč já?</a>
                     </li>
                     <li><a href="#postup"
-                            class="mobile-link text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Jak to probíhá</a>
+                            class="mobile-link inline-block py-2 text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Jak to probíhá</a>
                     </li>
                     <li><a href="#reference"
-                            class="mobile-link text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Reference</a>
+                            class="mobile-link inline-block py-2 text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Reference</a>
                     </li>
                     <li><a href="#cenik"
-                            class="mobile-link text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Ceny</a>
+                            class="mobile-link inline-block py-2 text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Ceny</a>
                     </li>
                     <li><a href="#faq"
-                            class="mobile-link text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">FAQ</a>
+                            class="mobile-link inline-block py-2 text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">FAQ</a>
                     </li>
                     <li><a href="#omne"
-                            class="mobile-link text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">O mně</a>
+                            class="mobile-link inline-block py-2 text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">O mně</a>
                     </li>
                     <li><a href="#kontakt"
-                            class="mobile-link text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Kontakt</a>
+                            class="mobile-link inline-block py-2 text-2xl font-medium text-white/90 hover:text-[var(--color-accent)] transition-colors tracking-wide">Kontakt</a>
                     </li>
 </ul>
 
