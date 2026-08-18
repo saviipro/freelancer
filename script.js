@@ -161,7 +161,28 @@ function revealOnScroll() {
     items.forEach(el => observer.observe(el));
 }
 
+// Zpět nahoru. Stránka je na mobilu hodně dlouhá, tohle zkracuje cestu k patičce.
+function backToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    const show = () => {
+        const past = window.scrollY > window.innerHeight * 1.5;
+        btn.classList.toggle('opacity-0', !past);
+        btn.classList.toggle('invisible', !past);
+    };
+
+    btn.addEventListener('click', () => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+
+    window.addEventListener('scroll', show, { passive: true });
+    show();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     fixCzechTypography();
     revealOnScroll();
+    backToTop();
 });
