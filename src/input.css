@@ -56,32 +56,6 @@ body {
     max-width: 100vw;
 }
 
-/* Mávající ruka u pozdravu. Vypnuto pro prefers-reduced-motion níž v souboru. */
-@keyframes wave {
-
-    0%,
-    60%,
-    100% {
-        transform: rotate(0deg);
-    }
-
-    10%,
-    30% {
-        transform: rotate(14deg);
-    }
-
-    20%,
-    40% {
-        transform: rotate(-8deg);
-    }
-}
-
-.wave {
-    display: inline-block;
-    transform-origin: 70% 70%;
-    animation: wave 2.6s ease-in-out infinite;
-}
-
 /* Plynulé rozbalení FAQ. Bez tohohle <details> naskočí skokem.
    Funguje v prohlížečích, které umí ::details-content (Chrome, Edge, novější Safari).
    Kde ne, chová se to jako dřív, tedy skokem. Nic se nerozbije. */
