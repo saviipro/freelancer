@@ -1201,6 +1201,10 @@
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .brightness-0 {
     --tw-brightness: brightness(0%);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -1968,22 +1972,6 @@ html, body {
   overflow-x: hidden;
   max-width: 100vw;
 }
-@keyframes wave {
-  0%, 60%, 100% {
-    transform: rotate(0deg);
-  }
-  10%, 30% {
-    transform: rotate(14deg);
-  }
-  20%, 40% {
-    transform: rotate(-8deg);
-  }
-}
-.wave {
-  display: inline-block;
-  transform-origin: 70% 70%;
-  animation: wave 2.6s ease-in-out infinite;
-}
 :root {
   interpolate-size: allow-keywords;
 }
@@ -2169,6 +2157,11 @@ details[open]::details-content {
   syntax: "*";
   inherits: false;
   initial-value: 0 0 #0000;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
@@ -2363,6 +2356,7 @@ details[open]::details-content {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
