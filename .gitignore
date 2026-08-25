@@ -14,6 +14,12 @@ dist/
 build/
 .cache/
 
+# Lokální screenshoty z vizuální kontroly — do repa nepatří
+desktop-*.png
+
+# Tiskové podklady vizitky. Zůstávají jen lokálně, do repa se neverzují.
+print/
+
 # Logy a dočasné soubory
 npm-debug.log*
 yarn-debug.log*
