@@ -151,3 +151,83 @@ details[open]::details-content {
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
 }
+/* ─────────────────────────────────────────────────────────────
+   HERO ANIMACE — přidat na konec src/input.css
+   (mimo @theme, jde o obyčejné CSS)
+   Reduced-motion je pokrytý tvým existujícím blokem výš:
+   animation-duration:0.01ms → prvky skočí do koncového stavu.
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes heroRise {
+    from { opacity: 0; transform: translateY(14px) }
+    to   { opacity: 1; transform: none }
+}
+@keyframes heroRiseSm {
+    from { opacity: 0; transform: translateY(8px) }
+    to   { opacity: 1; transform: none }
+}
+@keyframes heroPop {
+    0%   { opacity: 0; transform: scale(.9) }
+    70%  { transform: scale(1.03) }
+    100% { opacity: 1; transform: scale(1) }
+}
+@keyframes heroGrowX {
+    from { transform: scaleX(0) }
+    to   { transform: scaleX(1) }
+}
+@keyframes heroGrowY {
+    from { transform: scaleY(0) }
+    to   { transform: scaleY(1) }
+}
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0) }
+    50%      { transform: translateY(-9px) }
+}
+@keyframes heroPulseDot {
+    0%, 100% { transform: scale(1); opacity: 1 }
+    50%      { transform: scale(1.4); opacity: .6 }
+}
+@keyframes heroRing {
+    0%   { box-shadow: 0 0 0 0 rgba(69, 229, 136, .4) }
+    70%  { box-shadow: 0 0 0 16px rgba(69, 229, 136, 0) }
+    100% { box-shadow: 0 0 0 0 rgba(69, 229, 136, 0) }
+}
+@keyframes heroType {
+    from { width: 14% }
+    to   { width: 76% }
+}
+@keyframes heroCaret {
+    0%, 100% { opacity: 1 }
+    50%      { opacity: 0 }
+}
+@keyframes heroShimmer {
+    0%   { background-position: 200% 0 }
+    100% { background-position: -200% 0 }
+}
+@keyframes heroBreathe {
+    0%, 100% { transform: scaleY(1) }
+    50%      { transform: scaleY(.93) }
+}
+
+/* Jednorázový build při načtení. Stagger se řídí inline
+   style="animation-delay:…" v HTML, ať je timing vidět na místě. */
+.h-rise    { animation: heroRise .7s cubic-bezier(.23, 1, .32, 1) both }
+.h-rise-sm { animation: heroRiseSm .5s cubic-bezier(.23, 1, .32, 1) both }
+.h-pop     { animation: heroPop .55s cubic-bezier(.23, 1, .32, 1) both }
+.h-grow-x  { transform-origin: left; animation: heroGrowX .5s cubic-bezier(.23, 1, .32, 1) both }
+.h-grow-y  { transform-origin: bottom; animation: heroGrowY .5s cubic-bezier(.23, 1, .32, 1) both }
+
+/* Trvalý, jemný pohyb po dostavění. */
+.h-float   { animation: heroFloat 7s ease-in-out infinite }
+.h-dot     { animation: heroPulseDot 2.4s ease-in-out infinite }
+.h-ring    { animation: heroRing 3s ease-out infinite }
+.h-type    { animation: heroType 1.1s cubic-bezier(.23, 1, .32, 1) both }
+.h-caret   { animation: heroCaret 1s steps(1) infinite }
+.h-shimmer { background-size: 200% 100%; animation: heroShimmer 3.2s linear infinite }
+.h-breathe { animation: heroBreathe 5s ease-in-out infinite }
+
+/* Na mobilu mockup nepotřebuje plovoucí pohyb ani shimmer —
+   šetří to baterku a nic to vizuálně neubírá. */
+@media (max-width: 767px) {
+    .h-float, .h-shimmer, .h-breathe { animation: none }
+}
